@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha512-vBmx0N/uQOXznm/Nbkp7h0P1RfLSj0HQrFSzV8m7rOGyj30fYAOKHYvCNez+yM8IrfnW0TCodDEjRqf6fodf/Q==" crossorigin="anonymous"></script> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" integrity="sha512-SUJFImtiT87gVCOXl3aGC00zfDl6ggYAw5+oheJvRJ8KBXZrr/TMISSdVJ5bBarbQDRC2pR5Kto3xTR0kpZInA==" crossorigin="anonymous" /> -->
+	<title>Document</title>
+</head>
+<body>
+	<p>teste</p>
+	<canvas id="myChart" width="200" height="200" style="max-width: 300px; max-height: 225px;"></canvas>
+	<br><br><br><br>
+	<canvas id="myChart2" width="200" height="200" style="max-width: 300px; max-height: 300px;"></canvas>
+	<br><br><br><br>
+	<canvas id="myChart3" width="200" height="200" style="max-width: 300px; max-height: 300px;"></canvas>
+	<br><br><br><br>
+	<canvas id="myChart4" width="200" height="200" style="max-width: 600px; max-height: 300px;"></canvas>
+
+</body>
+	<script>
+		var ctx = document.getElementById('myChart');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+            data: 
+            {
+				labels: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta',  'Sábado'],
+                datasets: 
+                [{
+					label: 'Usuários ativos',
+					data: [1900, 650, 580, 799, 1600, 2200, 2300],
+                    backgroundColor: 
+                    [
+						'rgba(153, 102, 255, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(75, 192, 192, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(255, 206, 86, 0.3)',
+						'rgba(255, 159, 64, 0.3)',
+						'rgba(255, 99, 132, 0.3)'
+					],
+                    borderColor: 
+                    [
+						'rgba(153, 102, 255, 1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(112, 201, 81, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(255, 159, 64, 1)',
+						'rgba(255, 99, 132, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+            options: 
+            {
+                scales: 
+                {
+                    yAxes: 
+                    [{
+                        ticks: 
+                        {
+							beginAtZero: true
+						}
+					}]
+				},
+			},
+		});
+
+
+
+		//Gênero
+		var ctx2 = document.getElementById('myChart2');
+		var myChart2 = new Chart(ctx2, {
+			type: 'pie',
+            data: 
+            {
+				labels: ['Masc', 'Fem', 'Outro'],
+                datasets: 
+                [{
+					label: 'Usuários ativos',
+					data: [490, 650, 50],
+                    backgroundColor: 
+                    [
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(255, 99, 132, 0.3)',
+						'rgba(112, 201, 81, 0.3)'
+					],
+                    borderColor: 
+                    [
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 99, 132, 1)',
+						'rgba(112, 201, 81, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+            options: 
+            {
+                scales: 
+                {
+                    yAxes: 
+                    [{
+                        ticks: 
+                        {
+							beginAtZero: true
+						}
+					}]
+				},
+			},
+		});
+
+
+
+		//Celular
+		var ctx3 = document.getElementById('myChart3');
+		var myChart3 = new Chart(ctx3, {
+			type: 'pie',
+            data: 
+            {
+				labels: ['ios', 'android'],
+                datasets: 
+                [{
+					label: 'Usuários ativos',
+					data: [490, 650],
+                    backgroundColor: 
+                    [
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(112, 201, 81, 0.3)'
+					],
+                    borderColor: 
+                    [
+						'rgba(54, 162, 235, 1)',
+						'rgba(112, 201, 81, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+            options: 
+            {
+                scales: 
+                {
+                    yAxes: 
+                    [{
+                        ticks:
+                        {
+							beginAtZero: true
+						}
+					}]
+				},
+			},
+		});
+
+
+
+		
+		//Horário
+		var ctx4 = document.getElementById('myChart4');
+		var myChart4 = new Chart(ctx4, {
+			type: 'line',
+            data: 
+            {
+				labels: [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],
+                datasets:
+                [{
+					label: 'Horário',
+					data: [2000, 1800, 1500, 1900, 1000, 650, 700 , 900 , 1150, 1000 , 1100 , 1800, 1600, 1400, 900 , 1000 ,750,1800,1500,2000,2100,3000,2800,2450],
+                    backgroundColor: 
+                    [
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+
+						'rgba(75, 192, 192, 0.3)',
+						'rgba(75, 192, 192, 0.3)',
+						'rgba(75, 192, 192, 0.3)',
+						'rgba(75, 192, 192, 0.3)',
+						'rgba(75, 192, 192, 0.3)',
+						'rgba(75, 192, 192, 0.3)',
+
+
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)'
+					],
+                    borderColor: 
+                    [
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+						'rgba(54, 162, 235, 0.3)',
+
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+						'rgba(112, 201, 81, 0.3)',
+
+						'rgba(255, 159, 64, 0.3)',
+						'rgba(255, 159, 64, 0.3)',
+						'rgba(255, 159, 64, 0.3)',
+						'rgba(255, 159, 64, 0.3)',
+						'rgba(255, 159, 64, 0.3)',
+						'rgba(255, 159, 64, 0.3)',
+
+						'rgba(255, 99, 132, 0.3)',
+						'rgba(255, 99, 132, 0.3)',
+						'rgba(255, 99, 132, 0.3)',
+						'rgba(255, 99, 132, 0.3)',
+						'rgba(255, 99, 132, 0.3)',
+						'rgba(255, 99, 132, 0.3)'
+					],
+					borderWidth: 1
+				}]
+			},
+            options: 
+            {
+                scales: 
+                {
+                    yAxes: 
+                    [{
+                        ticks: 
+                        {
+							beginAtZero: true
+						}
+					}]
+				},
+			},
+		});
+	</script>
+</html>
